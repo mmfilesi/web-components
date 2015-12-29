@@ -1,0 +1,29 @@
+<dom-module id="al-vuelo">
+    <template>
+        <p>Sic transit gloria mundi</p>
+    </template>
+    <script>
+        /* Cacheamos el componente cuando lo creamos, gracias que el método polymer devuelve el             propio componente (por convención, aquí usamos mayúsculas, como si fuera una clase) */
+        var MiComponente = Polymer({
+            is: "al-vuelo",
+            factoryImpl: function(cadena) {
+                this.textContent = cadena;
+            }
+        });
+        
+        /* Hay dos maneras de crear un elemento al vuelo.
+        Una es la normal: */
+        //1. Creamos un elemento 
+        var miElemento = document.createElement("al-vuelo");
+        //2. Y lo appendeamos
+        document.body.appendChild(miElemento); 
+        
+        /* Otra es con función constructora */
+        var miInstancia = new MiComponente("Timeo Danaos et dona ferentes");
+        document.body.appendChild(miInstancia);
+        
+        
+    </script>            
+</dom-module>
+
+

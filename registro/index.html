@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Web Components</title>
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script> 
+        <link rel="import" href="bower_components/polymer/polymer.html">
+        <link rel="import" href="hola-mundo.html">
+        <link rel="import" href="al-vuelo.html">
+        <link rel="import" href="life-cycle.html">
+	</head>
+
+	<body>
+        <hola-mundo></hola-mundo>
+        <life-cycle></life-cycle> 
+        
+        <script>
+            /* Ejemplo de elemento creado al vuelo */
+            var miElemento = document.createElement("p");
+            miElemento.textContent = "Soy un párrafo creado al vuelo";
+            document.body.appendChild(miElemento);
+            
+            /* Ejemplo de objeto con función constructora */            
+            var MiObjeto = function(a, b) {
+                this.miDevuelveSuma = function() {
+                var miVariable = 10;
+                return a+b+miVariable;
+                }
+            }
+            miInstancia = new MiObjeto(3, 4);
+            console.log(miInstancia.miDevuelveSuma()); // 17
+        </script>
+	</body>
+    
+</html>

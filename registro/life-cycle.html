@@ -1,0 +1,22 @@
+<dom-module id="life-cycle">
+    <template>
+        <h5>Ciclo de vida del componente</h5>
+    </template>
+    <script>
+        Polymer({
+            is: "life-cycle",
+
+            created: function() {
+               console.log( "created: " + Date.now() );
+            },
+            
+            ready: function() {
+                console.log( "ready: " + Date.now() );
+            },
+            
+            attached: function() {
+                console.log( "attached: " + Date.now() );
+            }
+        });
+    </script>            
+</dom-module>

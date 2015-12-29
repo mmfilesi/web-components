@@ -1,0 +1,19 @@
+<dom-module id="hola-mundo">
+    <template>
+        <style>
+            p {
+                font-weight: bold;
+            }
+        </style>
+        <p>Hola Mundo</p>
+    </template>
+    <script>
+        Polymer({
+            is: "hola-mundo",
+            
+            attached: function() {
+                this.style.color = "#900"
+            }
+        })
+    </script>            
+</dom-module>
