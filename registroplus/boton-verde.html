@@ -1,0 +1,31 @@
+<dom-module id="boton-verde">
+
+    <script>
+        
+        Polymer({
+            is: "boton-verde",
+            
+            extends: 'button',
+            
+            hostAttributes: {
+                "id": "boton-formidable",
+                "tabIndex": 2,
+                "disabled": true,
+                "noAparece": false,
+                "stringficado": {
+                    "foo": "bar"
+                }
+            },
+            
+            created: function() {
+               this.style.background = "#090";
+                this.style.color = "#fff";
+                this.style.fontWeight = "bold";
+            }
+        });
+        
+    </script>
+
+</dom-module>
+
+
