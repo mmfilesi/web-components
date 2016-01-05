@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="fantastic-input">
+    <template>
+        <input type="text" on-keypress="sendEvent" id="finput">
+    </template>
+    <script>
+        Polymer({
+            is: "fantastic-input",            
+        
+            sendEvent: function() {
+                var valueInput = this.$.finput.value;                
+                this.fire("changeFantastic", valueInput);
+            }
+            
+        });
+    </script>
+</dom-module>

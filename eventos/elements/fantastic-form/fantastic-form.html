@@ -1,0 +1,24 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="fantastic-input.html">
+<dom-module id="fantastic-form">
+    <template>
+        <h4>Este es un input fantástico</h4>
+        <fantastic-input></fantastic-input>
+        <p id="contentFantasticInput"></p>
+    </template>
+    <script>
+        Polymer({
+            is: "fantastic-form",
+            
+            listeners: {
+              'changeFantastic': 'changeInputFantastic'
+            },
+            
+            changeInputFantastic: function(data) {
+                console.log("Input cambiado s", data);
+                this.$.contentFantasticInput.textContent = data.detail;
+            }
+            
+        });
+    </script>
+</dom-module>

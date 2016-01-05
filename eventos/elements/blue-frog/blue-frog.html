@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="blue-frog">
+    <template>
+        <style>
+            .frog {
+                color: #009;
+                font-weight: bold;
+            }
+        </style>
+        <div id="blueFrog" on-up="crazyJump">
+            <p class="frog"  on-fly="eatMosquito">Soy una rana azul</p>
+            <button id="croak" on-tap="crazyCroak">croar</button>
+        </div> 
+        <div id="redMosquito">
+            <p>Soy un mosquito rojo</p>
+            <button id="fly" on-tap="beginFly">volar</button>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: "blue-frog",
+            
+            listeners: {
+              'fly': 'eatMosquito'
+            },
+
+            crazyCroak: function(event, coords) {
+               console.log("tap de " + event.path[0].tagName + " en las coordenadas " + coords.x + ", " + coords.x);
+            },
+            crazyJump: function() {
+                console.log("jump, jump");
+            },
+            beginFly: function() {
+                this.fire('fly', "zámpame puedes");
+            },
+            eatMosquito: function(data) {
+                console.log(data.detail); // zámpame puedes
+            }
+            
+        });
+    </script>
+</dom-module>
