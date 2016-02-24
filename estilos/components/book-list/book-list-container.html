@@ -1,0 +1,36 @@
+<link rel="import" href="../style-theme.html">
+
+<link rel="import" href="book-list.html">
+<dom-module id="book-list-container">
+	
+	<template>
+		
+		<style>
+			:host {
+				--font-type: 'Times';
+			}
+
+		</style>
+
+
+			<book-list>
+		<span id="title">La conjura de los necios</span>
+		<span id="author">John Kennedy Toole</span>
+		<span id="location">Baton Rouge (Luisiana)</span>
+		<span id="year">1980</span>
+		<span id="category">novela</span>
+	</book-list>
+
+
+	</template>
+
+	<script>
+	
+		Polymer({
+			is: "book-list-container"
+		});
+
+	</script>
+
+
+</dom-module>

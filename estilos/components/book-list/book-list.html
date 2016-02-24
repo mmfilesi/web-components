@@ -1,0 +1,70 @@
+<link rel="import" href="../style-theme.html">
+
+<dom-module id="book-list">
+	
+	<template>
+	
+		<style is="custom-style">
+	:root {
+		--brand-color: blue;
+		}
+	</style>
+		<style include="sharred-style"></style>	
+		<style>
+
+			:host {
+				--box-standar: {
+	    			border: 1px solid;
+	    			background: #ededed;
+  				}
+  			}
+
+  			:host .box-grey {
+  				@apply(--box-standar);
+  				border-color: #ccc;
+  			}
+
+			:host li {
+				color: var(--brand-color);
+			}
+		</style>
+
+		<article class="box-grey" id="book">
+			<header class="main-titles">
+				<content select="#title"></content>
+			</header>
+			<div>
+				<ul>
+					<li class="autor">
+						<content select="#author"></content>
+					</li>
+					<li>
+						<content select="#location"></content>, <content select="#year"></content>
+					</li>
+					<li>
+						<content select="#category"></content>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<p>
+			<button on-tap="setClass">Cambiar la clase</button>
+		</p>
+
+	</template>
+
+	<script>
+	
+		Polymer({
+			is: "book-list",
+
+			setClass: function() {
+				this.customStyle['--brand-color'] = 'red';
+        		this.updateStyles();
+			}
+		});
+
+	</script>
+
+
+</dom-module>

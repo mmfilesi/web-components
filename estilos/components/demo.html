@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Components</title>
+	<script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<link rel="import" href="../bower_components/polymer/polymer.html">
+	<script>
+		// Conviene ir probando a comentar y descomentar el shady de polymer...
+		// window.Polymer = window.Polymer || {};
+		// window.Polymer.dom = 'shadow';
+	</script>
+	<link rel="import" href="book-list/book-list.html">
+
+</head>
+<body>
+
+	<book-list>
+		<span id="title">La conjura de los necios</span>
+		<span id="author">John Kennedy Toole</span>
+		<span id="location">Baton Rouge (Luisiana)</span>
+		<span id="year">1980</span>
+		<span id="category">novela</span>
+	</book-list>
+
+</body>
+</html>
