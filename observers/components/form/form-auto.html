@@ -1,0 +1,79 @@
+<dom-module id="form-auto">
+    <template>
+
+        <style>
+            :host .form-element {
+                margin: 0.5em;
+            }
+
+            :host .form-button {
+                margin: 0.5em;
+                padding: 0.5em;
+                background: #ededed;
+                border: 1px solid #ccc;
+            }
+        </style>
+
+        <form>
+            <div class="form-element">
+                <input id="user" type="text" placeholder="User" on-blur="_setUser">
+            </div>
+            <div class="form-element">                    
+                <input id="email" type="text" placeholder="Email" on-blur="_setEmail">
+            </div>
+            <button id="sendButton" class="form-button" disabled>Send</button>
+        </form>
+
+    </template>
+
+
+    <script>
+        Polymer({
+            is: 'form-auto',
+            properties: {
+                isPristine: true,
+                isValid: false,
+                userName:String,
+                eMail:  String,
+                jsonDemo: Array,
+                id: {
+                    type: String,
+                    readOnly: true,
+                    reflectToAttribute: true,
+                    value: function() {
+                        var _id = this.getAttribute('id') || Date.now();
+                        return _id;
+                    }
+                }
+            },
+
+            observers: [
+                '_checkInputs(userName, eMail)'
+            ],
+
+            ready: function() {
+                if ( this.userName ) {
+                    this.$.user.value = this.userName;
+                }
+                console.log(this.jsonDemo);
+            },
+
+            _setUser: function() {
+                this.userName = this.$.user.value;
+            },
+
+            _setEmail: function() {
+                this.eMail = this.$.email.value;
+            },
+
+            _checkInputs: function() {
+                if (  this.userName && this.eMail && this.eMail.indexOf('@') !== -1 ) {
+                    this.$.sendButton.removeAttribute('disabled');
+                } else {
+                    this.$.sendButton.setAttribute('disabled', true);
+                }
+            }
+            
+        });
+    </script>
+</dom-module>
